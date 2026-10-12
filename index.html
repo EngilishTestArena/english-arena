@@ -1,255 +1,415 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#030b1c">
-<title>ENGLISH ARENA ⚡ — Owner Sultanov</title>
+<meta name="theme-color" content="#101329">
+<title>ENGLISH ARENA ⚡</title>
 <style>
-:root{--bg:#030918;--panel:#07142a;--line:#123b70;--blue:#22c8ff;--purple:#8255ff;--text:#f5f8ff;--muted:#a8bddb;--green:#17edbd;--gold:#ffc44d;--pink:#ff347b}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#0b1d49 0,#030918 48%,#020611 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;overflow-x:hidden}
-button{font:inherit;cursor:pointer}
-a{color:inherit;text-decoration:none}
-.topbar{height:68px;padding:0 clamp(16px,4vw,56px);display:flex;align-items:center;gap:28px;border-bottom:1px solid #15325a;background:#030918eF;position:sticky;top:0;z-index:10;backdrop-filter:blur(16px)}
-.brand{display:flex;align-items:center;gap:12px;font-size:clamp(17px,2vw,23px);font-weight:900;white-space:nowrap;letter-spacing:.2px}
-.brand-icon{font-size:31px;filter:drop-shadow(0 0 12px #19cfff)}
-.brand span:last-child{background:linear-gradient(90deg,#fff,#5fe2ff 55%,#a58aff);background-clip:text;color:transparent}
-.nav{display:flex;align-items:center;gap:clamp(15px,3vw,38px);margin:auto}
-.nav a{font-size:14px;color:#c2d6f4;position:relative;padding:24px 0}
-.nav a:hover,.nav a.active{color:#54dcff}
-.nav a.active:after{content:"";height:3px;position:absolute;bottom:0;left:0;right:0;border-radius:4px;background:linear-gradient(90deg,var(--blue),var(--purple))}
-.top-right{display:flex;align-items:center;gap:12px}
-.coin-pill{border:1px solid #24528d;border-radius:30px;padding:8px 13px;display:flex;align-items:center;gap:8px;font-weight:800;background:#06152d}
-.coin{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#ffe88a,#ff9900);color:#6c3900;box-shadow:0 0 13px #ffb72c66;font-size:14px}
-.avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#2862b9,#b7cfff);color:#08204c;font-weight:900}
-main{max-width:1240px;margin:auto;padding:22px clamp(14px,3.5vw,42px) 0}
-.hero{display:grid;grid-template-columns:1fr 1.08fr .68fr;gap:22px;align-items:center;min-height:380px;padding:20px 0 32px;position:relative}
-.hero-copy{position:relative;z-index:1}
-.eyebrow{color:#7fbcff;font-size:14px;letter-spacing:.4px;margin-bottom:12px}
-.eyebrow b{color:#35e5e2}
-h1{font-size:clamp(42px,5.3vw,72px);line-height:.94;font-weight:1000;letter-spacing:-2px;text-transform:uppercase;text-shadow:0 0 25px #2b9fff55}
-h1 span{display:block;background:linear-gradient(115deg,#fff 5%,#71dfff 38%,#597dff 72%,#b071ff);background-clip:text;color:transparent}
-.owner{display:flex;align-items:center;gap:12px;margin:13px 0 17px;font-weight:750;font-size:15px;color:#f2f6ff}
-.owner:before,.owner:after{content:"";height:1px;width:35px;background:linear-gradient(90deg,transparent,#73caff)}
-.owner:after{background:linear-gradient(90deg,#73caff,transparent)}
-.intro{color:#c5d5eb;line-height:1.65;font-size:14px;max-width:350px}
-.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
-.btn{border:1px solid #2679ff;border-radius:30px;padding:13px 20px;color:white;background:#071a38;font-weight:800;transition:.2s;display:inline-flex;justify-content:center;align-items:center;gap:9px}
-.btn:hover{transform:translateY(-2px);filter:brightness(1.15)}
-.btn.primary{border:0;background:linear-gradient(110deg,#21c8f4,#385cff 75%,#7e4dff);box-shadow:0 8px 26px #245eff55}
-.art{position:relative;display:grid;place-items:center;min-height:310px;isolation:isolate}
-.art:before{content:"";position:absolute;width:74%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#1e5bdb44,transparent 68%);filter:blur(10px);z-index:-1}
-.orbit{position:absolute;width:88%;height:43%;border:3px solid transparent;border-top-color:#e64bff;border-bottom-color:#14d8ff;border-radius:50%;transform:rotate(-13deg);filter:drop-shadow(0 0 9px #1bbfff);z-index:-1}
-.book-stack{font-size:clamp(100px,14vw,170px);filter:drop-shadow(0 14px 12px #000b) drop-shadow(0 0 22px #286fff66);transform:rotate(-7deg);animation:float 4s ease-in-out infinite}
-.cap{position:absolute;top:9%;right:13%;font-size:clamp(44px,6vw,72px);transform:rotate(12deg);filter:drop-shadow(0 0 14px #388dff)}
-.letter{position:absolute;font-size:28px;font-weight:1000;padding:8px 13px;border-radius:12px;background:linear-gradient(145deg,#164db4,#6b35ff);border:1px solid #8cbbff;box-shadow:0 0 20px #345fff77}
-.letter.a{top:18%;left:5%;transform:rotate(-13deg)}.letter.b{top:45%;right:0;background:linear-gradient(145deg,#007e94,#20e2c7);transform:rotate(12deg)}.letter.c{bottom:8%;right:10%;background:linear-gradient(145deg,#6a12a6,#e42cff);transform:rotate(12deg)}
-.stats{border:1px solid #174a88;border-radius:21px;background:linear-gradient(145deg,#071a32ed,#030b19ed);padding:18px;box-shadow:0 0 35px #003e9b17}
-.stat{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #18365b}
-.stat:first-child{padding-top:0}.stat:last-child{border:0;padding-bottom:0}
-.stat-icon{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#0b2850;font-size:21px}
-.stat strong{display:block;font-size:22px;line-height:1.1}.stat small{color:#9dbde7;font-size:12px}
-.stat .easy-label{color:#20eac7}
-.level-section{border:1px solid #174a88;border-radius:18px;padding:22px 22px 24px;background:linear-gradient(145deg,#071329d9,#061025b8);box-shadow:0 15px 45px #0002}
-.section-title{text-align:center;font-size:clamp(22px,3vw,29px);font-weight:900}
-.section-sub{text-align:center;color:#a9c4e8;font-size:14px;margin:7px 0 21px}
-.levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.level-card{position:relative;overflow:hidden;border:1px solid #24548b;border-radius:19px;padding:20px;background:linear-gradient(145deg,#0a2134,#061224);min-height:205px;transition:.25s}
-.level-card:hover{transform:translateY(-4px)}
-.level-card.easy{border:2px solid var(--green);background:linear-gradient(145deg,#033a3c,#061b2c);box-shadow:0 0 18px #16edbd26}
-.level-card.standard{border-color:#e3ac39;background:linear-gradient(145deg,#252117,#0a1526)}
-.level-card.hard{border-color:#ff347b;background:linear-gradient(145deg,#321226,#0a1427)}
-.level-card.locked{filter:saturate(.72)}
-.level-symbol{width:62px;height:62px;border-radius:50%;border:3px solid currentColor;display:grid;place-items:center;font-size:28px;margin-bottom:13px;background:#07142688}
-.easy .level-symbol{color:var(--green)}.standard .level-symbol{color:var(--gold)}.hard .level-symbol{color:var(--pink)}
-.level-card h3{font-size:21px;margin-bottom:5px}
-.level-card p{font-size:12px;color:#bfd1e8;line-height:1.5;min-height:35px}
-.level-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:13px}
-.status{border-radius:20px;padding:7px 14px;font-size:12px;font-weight:900;background:#17e7b8;color:#002c2b}
-.level-card.standard .status{background:#4b3916;color:#ffce63}.level-card.hard .status{background:#45152d;color:#ff80ac}
-.lock{font-size:20px}
-.features{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:24px 0 0;border:1px solid #174a88;border-radius:17px;background:#061125c9;padding:20px 8px}
-.feature{text-align:center;padding:4px 10px;border-right:1px solid #173257}.feature:last-child{border:0}
-.feature-icon{font-size:29px;margin-bottom:8px;filter:drop-shadow(0 0 8px #437dff66)}
-.feature h4{font-size:13px;margin-bottom:6px}.feature p{font-size:11px;color:#a9c0df;line-height:1.5}
-.quote{text-align:center;padding:35px 12px 27px;color:#c4aaff;font-size:22px;font-style:italic;line-height:1.4}
-footer{border-top:1px solid #17365e;margin-top:0;background:#020815;padding:22px clamp(16px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:16px;color:#9dbde3;font-size:12px}
-.footer-brand{display:flex;align-items:center;gap:10px;color:white;font-weight:900;font-size:15px}
-.footer-owner{font-size:11px;color:#9dbde3;font-weight:500;margin-top:4px}
-footer .foot-links{display:flex;gap:20px;flex-wrap:wrap}
-.social-links{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.social-link{display:inline-flex;align-items:center;gap:9px;padding:10px 14px;border:1px solid #244a79;border-radius:14px;background:linear-gradient(145deg,#0a1c36,#061124);color:#eaf5ff;font-size:13px;font-weight:800;transition:transform .2s,border-color .2s,box-shadow .2s}
-.social-link:hover{transform:translateY(-3px);border-color:#4ccfff;box-shadow:0 8px 22px #167bff2b}
-.social-link svg{width:21px;height:21px;flex:0 0 21px}
-.social-link.instagram svg{color:#ff6aa9}
-.social-link.telegram svg{color:#48c8ff}
-.modal{position:fixed;inset:0;z-index:30;background:#010613df;backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:15px}
-.modal.show{display:flex}
-.quiz-box{width:min(620px,100%);max-height:90vh;overflow:auto;border:1px solid #2863a8;border-radius:22px;background:linear-gradient(145deg,#0b1c37,#030b19);padding:24px;box-shadow:0 0 60px #1766ff2b}
-.quiz-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
-.quiz-top h2{font-size:21px}.xbtn{border:1px solid #31557d;background:#0b1a31;color:white;border-radius:50%;width:36px;height:36px}
-.progress{height:7px;border-radius:10px;background:#1b2c48;overflow:hidden;margin-bottom:22px}.progress-in{height:100%;width:0;background:linear-gradient(90deg,#1dd9f6,#8b54ff);transition:width .3s}
-.q-count{color:#81cfff;font-size:12px;margin-bottom:10px}.question{font-size:21px;line-height:1.4;font-weight:800;margin-bottom:20px}
-.answers{display:grid;gap:10px}.answer{padding:14px 15px;text-align:left;border-radius:12px;border:1px solid #26466e;background:#0a1930;color:#eef6ff;transition:.15s}.answer:hover:not(:disabled){border-color:#39cfff;background:#0b2543}.answer.correct{border-color:#17edbd;background:#064333}.answer.wrong{border-color:#ff527f;background:#46172b}
-.feedback{min-height:25px;margin:13px 0;color:#b9d0ec;font-size:14px}.quiz-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#092541;border:1px solid #2e9ad7;color:white;padding:12px 18px;border-radius:12px;z-index:50;display:none;max-width:90%;text-align:center;box-shadow:0 8px 30px #0008}
-@keyframes float{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-10px) rotate(-4deg)}}
-@media(max-width:900px){.topbar{gap:14px}.nav{gap:17px}.hero{grid-template-columns:1fr 1fr;gap:8px}.hero-copy{padding-left:5px}.art{min-height:280px}.stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:12px 16px}.stat{border-bottom:0;border-right:1px solid #18365b;padding:5px 10px}.stat:last-child{border-right:0}.stat:first-child{padding-top:5px}.stat:last-child{padding-bottom:5px}}
-@media(max-width:620px){.topbar{height:auto;min-height:60px;padding:11px 14px;flex-wrap:wrap;gap:8px}.brand{font-size:17px;gap:7px}.brand-icon{font-size:26px}.nav{order:3;width:100%;justify-content:space-around;gap:8px;margin:0}.nav a{font-size:12px;padding:8px 0 7px}.nav a.active:after{bottom:0}.top-right{margin-left:auto}.coin-pill{padding:6px 9px;font-size:13px}.avatar{width:30px;height:30px}.top-right .avatar{display:none}main{padding:10px 12px 0}.hero{grid-template-columns:1fr;min-height:0;padding:22px 3px 22px;gap:0}.hero-copy{text-align:center}.eyebrow{font-size:12px}h1{font-size:clamp(45px,14vw,68px);letter-spacing:-1.5px}.owner{justify-content:center;margin:12px 0}.intro{margin:auto;max-width:390px;font-size:13px}.actions{justify-content:center;margin-top:18px}.btn{padding:12px 16px;font-size:13px}.art{min-height:220px;grid-row:2;margin-top:4px}.book-stack{font-size:130px}.cap{font-size:53px}.letter{font-size:22px;padding:6px 10px}.stats{grid-column:auto;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;padding:10px 5px;border-radius:14px}.stat{gap:6px;padding:5px 4px;justify-content:center;flex-wrap:wrap;text-align:center;border-right:1px solid #18365b}.stat-icon{width:30px;height:30px;font-size:16px}.stat strong{font-size:17px}.stat small{font-size:10px}.level-section{padding:18px 12px;border-radius:15px}.section-title{font-size:23px}.section-sub{font-size:12px;line-height:1.5;margin-bottom:16px}.levels{grid-template-columns:1fr;gap:12px}.level-card{min-height:0;padding:16px;display:grid;grid-template-columns:56px 1fr;column-gap:12px;align-items:center}.level-symbol{width:52px;height:52px;font-size:24px;grid-row:span 2;margin:0}.level-card h3{font-size:19px}.level-card p{min-height:0}.level-foot{grid-column:2;margin-top:10px}.features{grid-template-columns:repeat(2,1fr);padding:12px 6px;gap:5px;margin-top:14px}.feature{padding:12px 8px;border-right:0;border-bottom:1px solid #173257}.feature:nth-child(odd){border-right:1px solid #173257}.feature:last-child{grid-column:1/-1;border-bottom:0;border-right:0}.feature-icon{font-size:26px;margin-bottom:5px}.quote{font-size:18px;padding:25px 8px}footer{flex-direction:column;text-align:center;padding:19px 12px;gap:15px}footer .foot-links{justify-content:center;gap:15px}.social-links{width:100%;gap:9px}.social-link{padding:9px 12px}.quiz-box{padding:18px;border-radius:18px}.quiz-top h2{font-size:18px}.question{font-size:19px}.answer{padding:13px;font-size:14px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+:root{
+  --bg:#101329;--card:#191f3d;--text:#f5f7ff;
+  --muted:#aab4d0;--blue:#6685ff;--purple:#a46bff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:radial-gradient(ellipse at top,#202956 0%,var(--bg) 65%);
+  color:var(--text);font-family:Arial,sans-serif;min-height:100vh;
+}
+header{
+  padding:23px 12px;text-align:center;background:#141a32;
+  border-bottom:1px solid #303b65;position:sticky;top:0;z-index:5;
+}
+.logo{font-size:25px;font-weight:900;letter-spacing:1px}
+.logo span{color:#8aa2ff}
+header p{color:var(--muted);font-size:12px;margin:7px 0 0}
+main{max-width:850px;margin:auto;padding:20px 14px 30px}
+.panel{
+  background:linear-gradient(145deg,#1b2345,#171b34);
+  border:1px solid #333e67;border-radius:20px;padding:20px;
+  margin-bottom:17px;box-shadow:0 10px 30px #0002;
+}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.coins{font-size:25px;font-weight:900;color:#ffd66b}
+.small{font-size:12px;color:var(--muted)}
+h2{font-size:20px;margin:0 0 9px}
+h3{margin:0 0 8px}
+.levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.level{
+  border:1px solid #39456e;border-radius:16px;padding:15px 8px;
+  background:#202747;color:white;text-align:center;cursor:pointer;
+  transition:.2s;min-width:0;
+}
+.level:hover:not(:disabled){transform:translateY(-3px);border-color:#91a4ff}
+.level:disabled{opacity:.42;cursor:not-allowed}
+.level .emoji{font-size:27px}
+.level strong{display:block;margin:8px 0 5px;font-size:15px}
+.level small{font-size:11px;color:#c3cce8;line-height:1.5}
+.easy{border-bottom:3px solid #46dfaa}
+.standard{border-bottom:3px solid #6da5ff}
+.hard{border-bottom:3px solid #c18aff}
+.primary{
+  border:0;border-radius:13px;padding:14px 17px;
+  background:linear-gradient(100deg,#617eff,#a06aff);
+  color:white;font-weight:bold;font-size:15px;cursor:pointer;
+}
+.secondary{
+  border:1px solid #45517c;border-radius:12px;padding:11px 14px;
+  background:#252e50;color:white;cursor:pointer;font-weight:bold;
+}
+button:active{transform:scale(.98)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.hidden{display:none!important}
+.status{color:var(--muted);font-size:13px;line-height:1.6}
+.progress{height:7px;background:#30395c;border-radius:20px;overflow:hidden;margin-top:12px}
+.bar{height:100%;width:100%;background:linear-gradient(90deg,#58e6bd,#6c9cff);transition:width .2s linear}
+.timerline{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.timer{font-size:24px;font-weight:900;color:#ffe082}
+.question{font-size:23px;line-height:1.45;margin:20px 0}
+.answers{display:grid;gap:10px}
+.answer{
+  text-align:left;padding:15px;border:1px solid #3c486f;border-radius:13px;
+  color:white;background:#222a49;font-size:15px;cursor:pointer;
+}
+.answer:hover:not(:disabled){background:#303b66;border-color:#859cff}
+.answer.correct{background:#174d40;border-color:#4ee0a9}
+.answer.wrong{background:#572b43;border-color:#ff829e}
+.feedback{min-height:25px;margin-top:13px;font-size:14px;font-weight:bold}
+.notice{padding:12px;border-radius:12px;background:#222b4c;color:#cbd6ff;font-size:13px;line-height:1.6}
+.endbtn{width:100%;margin-top:13px;background:linear-gradient(100deg,#f3b94e,#f07c67);color:#24152c}
+footer{text-align:center;padding:22px 12px 35px;color:var(--muted);font-size:13px}
+.socials{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:16px 0}
+.social{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  text-decoration:none;color:white;padding:13px 19px;border-radius:14px;
+  font-weight:bold;min-width:155px;transition:.2s;
+}
+.social:hover{transform:translateY(-3px);filter:brightness(1.12)}
+.insta{background:linear-gradient(120deg,#833ab4,#fd1d1d,#fcb045)}
+.telegram{background:linear-gradient(120deg,#168bd0,#37b8f4)}
+.social svg{width:22px;height:22px;fill:white}
+footer .copyright{font-size:11px;opacity:.65}
+#toast{color:#ffe082;font-size:13px;margin-top:10px}
+@media(max-width:480px){
+  header{padding:18px 8px}
+  .logo{font-size:22px}
+  main{padding:14px 10px 25px}
+  .panel{padding:15px;border-radius:16px}
+  .level{padding:12px 4px}
+  .level strong{font-size:13px}
+  .level small{font-size:10px}
+  .question{font-size:20px}
+  .coins{font-size:22px}
+}
 </style>
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="#home" aria-label="English Arena home"><span class="brand-icon">📘</span><span>ENGLISH ARENA</span></a>
-  <nav class="nav" aria-label="Main navigation">
-    <a class="active" href="#home">Home</a><a href="#levels">Levels</a><a href="#features">Features</a><a href="#profile">Profile</a>
-  </nav>
-  <div class="top-right"><div class="coin-pill"><span class="coin">★</span><span id="topCoins">0</span></div><div class="avatar">S</div></div>
+<header>
+  <div class="logo">ENGLISH <span>ARENA ⚡</span></div>
+  <p>Learn English. Win coins. Become a champion!</p>
 </header>
-<main id="home">
-  <section class="hero">
-    <div class="hero-copy">
-      <div class="eyebrow">Learn English • Grow Your <b>Future</b></div>
-      <h1>ENGLISH <span>ARENA</span></h1>
-      <div class="owner">Owner Sultanov</div>
-      <p class="intro">Test your knowledge, earn coins, unlock new levels and become a true English champion!</p>
-      <div class="actions"><button class="btn primary" id="startBtn">▶ Start Learning</button><button class="btn" id="howBtn">ⓘ How It Works</button></div>
+
+<main>
+  <section class="panel">
+    <div class="row">
+      <div>
+        <div class="small">SENING BALANSING</div>
+        <div class="coins">🪙 <span id="coins">0</span></div>
+      </div>
+      <div style="text-align:right">
+        <div class="small">JAMI TO‘G‘RI JAVOBLAR</div>
+        <h2 id="correctTotal">0</h2>
+      </div>
     </div>
-    <div class="art" aria-label="English learning illustration">
-      <div class="orbit"></div><div class="letter a">A</div><div class="book-stack">📚</div><div class="cap">🎓</div><div class="letter b">B</div><div class="letter c">C</div>
-    </div>
-    <aside class="stats" id="profile">
-      <div class="stat"><div class="stat-icon">🪙</div><div><strong id="statCoins">0</strong><small>Your Coins</small></div></div>
-      <div class="stat"><div class="stat-icon">👑</div><div><strong class="easy-label" id="statLevel">EASY</strong><small>Current Level</small></div></div>
-      <div class="stat"><div class="stat-icon">🏆</div><div><strong id="statCorrect">0</strong><small>Total Correct</small></div></div>
-    </aside>
+    <div class="progress"><div class="bar" id="overallBar" style="width:0%"></div></div>
+    <div class="small" style="margin-top:7px" id="saveStatus">Natijalaring avtomatik saqlanadi.</div>
   </section>
-  <section class="level-section" id="levels">
-    <h2 class="section-title">Choose Your Level</h2>
-    <p class="section-sub">Each level has unique challenges. Earn coins, unlock higher levels!</p>
+
+  <section class="panel" id="home">
+    <h2>🏟️ Bosqichni tanla</h2>
+    <p class="status">Savollarga vaqt tugamasidan javob ber va coin yig‘!</p>
     <div class="levels">
-      <article class="level-card easy"><div class="level-symbol">♧</div><div><h3>EASY</h3><p>Beginner • 2 coins per correct answer</p></div><div class="level-foot"><span class="status">Available</span><button class="btn primary play-level" data-level="easy">Play →</button></div></article>
-      <article class="level-card standard locked" id="standardCard"><div class="level-symbol">ϟ</div><div><h3>STANDARD</h3><p>Intermediate • Unlock at 150 EASY coins</p></div><div class="level-foot"><span class="status" id="standardStatus">🔒 150 coins</span><button class="btn play-level" data-level="standard" id="standardPlay">🔒</button></div></article>
-      <article class="level-card hard locked" id="hardCard"><div class="level-symbol">♨</div><div><h3>HARD</h3><p>Advanced • Unlock at 450 STANDARD coins</p></div><div class="level-foot"><span class="status" id="hardStatus">🔒 450 coins</span><button class="btn play-level" data-level="hard" id="hardPlay">🔒</button></div></article>
+      <button class="level easy" id="easyBtn" onclick="startLevel('easy')">
+        <div class="emoji">🟢</div><strong>EASY</strong>
+        <small>10 soniya<br>Boshlang‘ich</small>
+      </button>
+      <button class="level standard" id="standardBtn" onclick="startLevel('standard')">
+        <div class="emoji">🔵</div><strong>STANDARD</strong>
+        <small>15 soniya<br><span id="standardInfo">150 EASY coin</span></small>
+      </button>
+      <button class="level hard" id="hardBtn" onclick="startLevel('hard')">
+        <div class="emoji">🟣</div><strong>HARD</strong>
+        <small>20 soniya<br><span id="hardInfo">450 STANDARD coin</span></small>
+      </button>
+    </div>
+    <div class="notice" style="margin-top:15px">
+      ✅ To‘g‘ri javob: <b>+2 coin</b><br>
+      ❌ Noto‘g‘ri javob: <b>−1.5 coin</b><br>
+      ⏰ Vaqt tugasa: <b>−1.5 coin</b><br>
+      🔓 STANDARD: EASY bosqichida jami 150 coin ishlab top.<br>
+      🔓 HARD: STANDARD bosqichida jami 450 coin ishlab top.
+    </div>
+    <button class="primary endbtn" onclick="unlockEnd()">🏆 END — 600 coin sarflab ochish</button>
+    <div id="toast"></div>
+  </section>
+
+  <section class="panel hidden" id="quiz">
+    <div class="row">
+      <div>
+        <div class="small">HOZIRGI BOSQICH</div>
+        <h2 id="levelTitle">EASY</h2>
+      </div>
+      <button class="secondary" onclick="leaveQuiz()">✕ Chiqish</button>
+    </div>
+    <div class="timerline" style="margin-top:18px">
+      <span class="small" id="questionCount">Savol 1</span>
+      <span class="timer">⏱️ <span id="time">10</span>s</span>
+    </div>
+    <div class="progress"><div class="bar" id="timerBar"></div></div>
+    <div class="question" id="question">Savol yuklanmoqda...</div>
+    <div class="answers" id="answers"></div>
+    <div class="feedback" id="feedback"></div>
+    <div class="row" style="margin-top:12px">
+      <span class="small">🪙 Balans: <b id="quizCoins">0</b></span>
+      <span class="small">To‘g‘ri: <b id="quizCorrect">0</b></span>
     </div>
   </section>
-  <section class="features" id="features">
-    <div class="feature"><div class="feature-icon">🎯</div><h4>Multiple Choice</h4><p>Choose the right answer and improve your skills.</p></div>
-    <div class="feature"><div class="feature-icon">🪙</div><h4>Earn Coins</h4><p>Get +2 coins for each correct answer.</p></div>
-    <div class="feature"><div class="feature-icon">📈</div><h4>Unlock Levels</h4><p>Reach new levels and face bigger challenges.</p></div>
-    <div class="feature"><div class="feature-icon">🏆</div><h4>Track Progress</h4><p>Your score is saved on this device.</p></div>
-    <div class="feature"><div class="feature-icon">♾️</div><h4>Endless Tests</h4><p>Questions keep coming in every level.</p></div>
+
+  <section class="panel hidden" id="endScreen">
+    <div style="text-align:center;padding:10px 0">
+      <div style="font-size:65px">🏆</div>
+      <h2 style="font-size:28px">TABRIKLAYMIZ!</h2>
+      <p class="status">Sen ENGLISH ARENA maxsus bosqichini ochding!</p>
+      <div class="coins" style="margin:22px 0">⭐ CHAMPION ⭐</div>
+      <p>Sen haqiqiy ingliz tili chempionisan!</p>
+      <p class="status">Saytni davom ettir va yanada ko‘proq bilim ol.</p>
+      <button class="primary" style="width:100%;margin-top:15px" onclick="goHome()">🏠 Bosh sahifaga qaytish</button>
+    </div>
   </section>
-  <div class="quote">“ Better English, Bigger Opportunities ”<br><span style="color:#21e4bd">⌁⌁⌁</span></div>
 </main>
+
 <footer>
-  <div class="foot-links"><a href="#home">Home</a><a href="#levels">Levels</a><a href="#features">Features</a><a href="#profile">Profile</a></div>
-  <div>
-    <div class="footer-brand"><span style="font-size:24px">📘</span> ENGLISH ARENA</div>
-    <div class="footer-owner">Owner Sultanov</div>
-  </div>
-  <div class="social-links" aria-label="Owner social media">
-    <a class="social-link instagram" href="https://www.instagram.com/sxltanov?psln=MWx1d2hxaTRtc3E1MA==" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram account">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.8" r="1.2" fill="currentColor"/></svg>
-      <span>Instagram</span>
+  <div style="font-size:18px;font-weight:bold;color:white">Bizni kuzatib boring 💙</div>
+  <p>Yangiliklar va foydali ma’lumotlar uchun</p>
+  <div class="socials">
+    <a class="social insta" href="https://www.instagram.com/sxltanov/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profilim">
+      <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm5.2-3.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+      Instagram
     </a>
-    <a class="social-link telegram" href="https://t.me/Syltanvv" target="_blank" rel="noopener noreferrer" aria-label="Open Telegram account">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.8 4.4 18.6 20c-.24 1.1-.88 1.36-1.78.85l-4.92-3.63-2.38 2.3c-.27.27-.5.5-1.02.5l.36-5.02 9.13-8.25c.4-.36-.09-.56-.62-.2L6.08 13.7l-4.86-1.52c-1.06-.33-1.08-1.06.22-1.57L20.45 3.4c.88-.32 1.65.21 1.35 1z"/></svg>
-      <span>Telegram</span>
+    <a class="social telegram" href="https://t.me/Syltanvv" target="_blank" rel="noopener noreferrer" aria-label="Telegram profilim">
+      <svg viewBox="0 0 24 24"><path d="M21.8 4.2 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.5l-4.9-1.5c-1.1-.3-1.1-1 .2-1.5L20.4 3c.9-.3 1.7.2 1.4 1.2z"/></svg>
+      Telegram
     </a>
   </div>
-  <div>Learn English&nbsp; • &nbsp;Build Your Future&nbsp; ♡</div>
+  <div class="copyright">© 2026 ENGLISH ARENA ⚡ · Keep learning!</div>
 </footer>
-<div class="modal" id="quizModal" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
- <div class="quiz-box">
-  <div class="quiz-top"><h2 id="quizTitle">EASY • English Test</h2><button class="xbtn" id="closeQuiz" aria-label="Close">✕</button></div>
-  <div class="progress"><div class="progress-in" id="progressIn"></div></div>
-  <div class="q-count" id="qCount">Question 1</div><div class="question" id="question">Loading question...</div>
-  <div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div>
-  <div class="quiz-actions"><span class="coin-pill">🪙 <span id="quizCoins">0</span></span><button class="btn primary" id="nextBtn" disabled>Next question →</button></div>
- </div>
-</div>
-<div class="toast" id="toast" role="status"></div>
+
 <script>
-const $=id=>document.getElementById(id);
-const defaultState={easy:0,standard:0,hard:0,correct:0,answered:0};
-let state;
-try{state={...defaultState,...JSON.parse(localStorage.getItem('englishArenaSultanov')||'{}')}}catch(e){state={...defaultState}}
-let level='easy',questionNo=0,lockedAnswer=false,currentCorrect='',sessionScore=0,previousQuestions=[];
-const banks={
-easy:[
-['I ___ a student.','am','is','are','am'],['She ___ my sister.','is','are','am','is'],['They ___ football every day.','play','plays','playing','play'],['He ___ to school by bus.','goes','go','going','goes'],['We ___ happy today.','are','is','am','are'],['What is the opposite of “big”?','small','tall','long','small'],['What is the plural of “child”?','children','childs','childes','children'],['I have ___ apple.','an','a','the','an'],['The sun ___ in the east.','rises','rise','rising','rises'],['Yesterday, I ___ at home.','was','am','were','was'],['Choose the correct spelling.','beautiful','beautifull','beautyful','beautiful'],['A person who teaches is a ___.','teacher','doctor','driver','teacher'],['What is the past of “go”?','went','goed','gone','went'],['There ___ two books on the table.','are','is','am','are'],['My mother ___ cooking now.','is','are','does','is'],['What colour is grass usually?','green','blue','purple','green'],['I ___ like coffee.','do not','does not','am not','do not'],['How ___ are you?','old','much years','many age','old'],['A cat says ___.','meow','moo','woof','meow'],['We eat soup with a ___.','spoon','pencil','shoe','spoon'],['Choose the correct sentence.','He likes music.','He like music.','He liking music.','He likes music.'],['There are seven days in a ___.','week','month','year','week'],['The opposite of “hot” is ___.','cold','warm','boiling','cold'],['I can ___ English.','speak','speaks','speaking','speak'],['She has ___ orange bag.','an','a','many','an'],['What time is it? 7:00','It is seven o’clock.','It is seven years.','It is seven days.','It is seven o’clock.'],['Birds ___ fly.','can','is','does','can'],['My birthday is ___ May.','in','on','at','in'],['He is taller ___ me.','than','then','that','than'],['Please ___ the door.','open','opens','opening','open']
+const QUESTIONS = {
+easy: [
+["I ___ a student.","am","is","are","be",0],
+["She ___ to school every day.","go","goes","going","gone",1],
+["They ___ football now.","play","plays","are playing","played",2],
+["What is the opposite of 'big'?","Tall","Long","Small","Wide",2],
+["I have ___ apple.","a","an","thee","are",1],
+["He ___ not like coffee.","do","is","does","are",2],
+["We ___ happy yesterday.","was","were","are","be",1],
+["What is the plural of 'child'?","childs","children","childes","childrens",1],
+["There ___ two books on the table.","is","am","are","be",2],
+["What is the past of 'go'?","goed","went","gone","going",1],
+["My mother ___ cooking now.","is","are","am","be",0],
+["Choose the correct word: I can ___ English.","speaks","speaking","speak","spoke",2],
+["The sun ___ in the east.","rise","rises","rising","rose",1],
+["What is the opposite of 'hot'?","Warm","Cold","High","Fast",1],
+["___ you like music?","Does","Are","Do","Is",2],
+["I ___ TV every evening.","watch","watches","watching","watched",0],
+["This is ___ orange.","a","an","some","many",1],
+["What is the past of 'eat'?","eated","ate","eaten","eats",1],
+["She is taller ___ me.","then","that","than","as",2],
+["There isn't ___ milk.","some","many","any","few",2],
+["How ___ are you?","old","much","many","long",0],
+["My brother ___ football on Sundays.","play","plays","playing","are play",1],
+["We ___ from Uzbekistan.","is","am","are","be",2],
+["Choose the correct spelling.","Beautifull","Beutiful","Beautiful","Beautifal",2],
+["I ___ my homework yesterday.","do","did","does","doing",1]
 ],
-standard:[
-['If I ___ more time, I would learn French.','had','have','will have','had'],['She has lived here ___ 2020.','since','for','during','since'],['By the time we arrived, the film ___.','had started','starts','has start','had started'],['He asked me where I ___.','lived','live','am live','lived'],['I am interested ___ learning languages.','in','on','at','in'],['Neither Tom nor his friends ___ ready.','are','is','was','are'],['If it rains, we ___ at home.','will stay','would stayed','stayed','will stay'],['This is the book ___ I told you about.','that','who','where','that'],['You ___ wear a seat belt in a car.','must','might to','can to','must'],['The homework ___ by the students yesterday.','was completed','completed','is completing','was completed'],['She speaks English ___ than I do.','more fluently','most fluent','fluentlier','more fluently'],['I wish I ___ taller.','were','am','will be','were'],['He is used to ___ early.','getting up','get up','got up','getting up'],['There is not ___ milk left.','much','many','few','much'],['Despite ___ tired, she continued working.','being','be','was','being'],['Choose the correct reported speech: “I am tired.”','He said he was tired.','He said I am tired.','He says he tired.','He said he was tired.'],['The train ___ before we reached the station.','had left','has leave','leaves','had left'],['I would rather you ___ here.','stayed','stay','will stay','stayed'],['The word “reliable” means ___.','dependable','dangerous','careless','dependable'],['She succeeded ___ passing the exam.','in','at','on','in'],['Unless you hurry, you ___ the bus.','will miss','would missed','missed','will miss'],['The man ___ lives next door is a pilot.','who','which','whose','who'],['I have never ___ such a beautiful place.','seen','saw','seeing','seen'],['We need to reduce the amount ___ plastic we use.','of','from','for','of'],['Hardly had I arrived ___ it started raining.','when','than','then','when'],['The meeting was put ___ until Friday.','off','out','away','off'],['He apologized ___ being late.','for','about','to','for'],['She is looking forward to ___ you.','meeting','meet','met','meeting'],['The results were different ___ what we expected.','from','to','with','from'],['If I had known, I ___ you.','would have helped','will help','helped','would have helped']
+standard: [
+["If I ___ time, I will help you.","have","had","has","having",0],
+["She has lived here ___ 2020.","for","since","during","from",1],
+["They ___ dinner when I arrived.","have","had","were having","are having",2],
+["He is interested ___ science.","on","at","in","for",2],
+["I have never ___ to London.","been","went","go","being",0],
+["If I were rich, I ___ a big house.","buy","will buy","would buy","bought",2],
+["This book ___ by millions of people.","reads","is read","reading","read",1],
+["You ___ wear a seat belt.","should","would","might to","can to",0],
+["She asked me where I ___.","live","lived","living","have live",1],
+["By next year, I ___ school.","finish","finished","will have finished","finishing",2],
+["Neither Tom nor his friends ___ ready.","is","was","are","be",2],
+["The test was ___ than I expected.","easy","easier","easiest","more easy",1],
+["I wish I ___ more free time.","have","will have","had","having",2],
+["He apologized ___ being late.","for","to","about","with",0],
+["The train ___ before we arrived.","left","had left","has leave","leaves",1],
+["If it rains, we ___ at home.","stay","stayed","will stay","would stayed",2],
+["She speaks English very ___.","good","well","betterly","bestly",1],
+["I am looking forward to ___ you.","see","saw","seeing","seen",2],
+["The man ___ lives next door is a doctor.","which","whose","who","where",2],
+["You have finished, ___ you?","haven't","don't","didn't","aren't",0],
+["He suggested ___ a taxi.","take","to take","taking","took",2],
+["This is the place ___ we met.","which","where","who","whose",1],
+["Despite ___ tired, she continued working.","be","being","was","been",1],
+["I would rather ___ at home.","stay","to stay","staying","stayed",0],
+["The room needs ___.","clean","cleaned","cleaning","to cleaning",2]
 ],
-hard:[
-['Had I known about the delay, I ___ earlier.','would have left','will leave','would leave','would have left'],['The proposal, ___ carefully, was accepted.','having been reviewed','reviewing','has reviewed','having been reviewed'],['Not only ___ the exam, but she also won a prize.','did she pass','she passed','passed she','did she pass'],['His explanation was so ___ that nobody questioned it.','compelling','ordinary','reluctant','compelling'],['The manager insisted that he ___ present.','be','is','was','be'],['Were it not for your help, I ___ the task.','could not complete','cannot completed','will not complete','could not complete'],['The data ___ that the trend is changing.','suggest','suggests','suggesting','suggest'],['She speaks as though she ___ everything.','knew','knows','has know','knew'],['The new policy is aimed ___ improving safety.','at','to','for','at'],['No sooner had we sat down ___ the lights went out.','than','when','then','than'],['His claim is not supported ___ sufficient evidence.','by','with','from','by'],['The word “ambiguous” is closest in meaning to ___.','unclear','obvious','accurate','unclear'],['If he were to resign, the company ___ a replacement.','would seek','will sought','seeks','would seek'],['She denied ___ the confidential document.','having taken','to take','take','having taken'],['The book is believed ___ in the 18th century.','to have been written','being written','to write','to have been written'],['Much as I ___ your opinion, I disagree.','respect','am respecting','respected','respect'],['The more you practise, ___ you become.','the more confident','more confident','the most confident','the more confident'],['He had his car ___ yesterday.','repaired','repair','repairing','repaired'],['The evidence was too weak to ___ a conclusion.','draw','do','make up','draw'],['Were the plan ___, we would need more staff.','to be approved','approved it','approving','to be approved'],['She is a highly ___ researcher.','regarded','regarding','regardful','regarded'],['The witness gave a ___ account of the event.','coherent','coherence','coherently','coherent'],['Little ___ that the decision would cause such controversy.','did they know','they knew','they did knew','did they know'],['The project was delayed, ___ the team worked overtime.','even though','despite of','whereas of','even though'],['He is on the ___ of making a major discovery.','verge','edgeful','bordering','verge'],['It is essential that every applicant ___ the form.','complete','completes','completed','complete'],['Her argument rests ___ the assumption that costs will fall.','on','in','at','on'],['The company has introduced measures to ___ the impact.','mitigate','imitate','meditate','mitigate'],['His comments were intended to ___ tension.','defuse','diffuse out','refuse','defuse'],['Only after the meeting ___ the seriousness of the issue.','did we understand','we understood','understood we','did we understand']
-]};
-const templates={
-easy:[
-()=>{let a=Math.floor(Math.random()*20)+1;let b=Math.floor(Math.random()*20)+1;return [`What is ${a} + ${b}?`,String(a+b),String(a+b+1),String(Math.abs(a-b)),String(a+b)]},
-()=>{let words=[['book','books'],['box','boxes'],['baby','babies'],['bus','buses'],['class','classes']];let w=words[Math.floor(Math.random()*words.length)];return [`What is the plural of “${w[0]}”?`,w[1],w[0]+'s',w[0]+'es',w[1]]},
-()=>{let pairs=[['happy','sad'],['early','late'],['clean','dirty'],['strong','weak'],['easy','difficult'],['rich','poor']];let p=pairs[Math.floor(Math.random()*pairs.length)];return [`What is the opposite of “${p[0]}”?`,p[1],p[0],pairs[(pairs.indexOf(p)+1)%pairs.length][1],p[1]]},
-()=>{let items=[['I','am'],['You','are'],['He','is'],['She','is'],['We','are'],['They','are']];let p=items[Math.floor(Math.random()*items.length)];return [`${p[0]} ___ ready.`,p[1],p[1]==='am'?'is':'am','be',p[1]]}
-],
-standard:[
-()=>{let verbs=[['write','wrote','written'],['choose','chose','chosen'],['break','broke','broken'],['speak','spoke','spoken'],['take','took','taken']];let v=verbs[Math.floor(Math.random()*verbs.length)];return [`What is the past participle of “${v[0]}”?`,v[2],v[1],v[0]+'ed',v[2]]},
-()=>{let p=[['for','a period of time'],['since','a starting point'],['although','contrast'],['unless','if not']];let x=p[Math.floor(Math.random()*p.length)];return [`Which word means “${x[1]}”?`,x[0],p[(p.indexOf(x)+1)%p.length][0],p[(p.indexOf(x)+2)%p.length][0],x[0]]},
-()=>{let adj=[['good','better','best'],['bad','worse','worst'],['far','farther','farthest']];let a=adj[Math.floor(Math.random()*adj.length)];return [`What is the comparative form of “${a[0]}”?`,a[1],a[2],a[0]+'er',a[1]]}
-],
-hard:[
-()=>{let pairs=[['mitigate','make less severe'],['ambiguous','open to more than one meaning'],['coherent','logical and consistent'],['reluctant','unwilling'],['concise','brief but clear'],['inevitable','certain to happen']];let p=pairs[Math.floor(Math.random()*pairs.length)];return [`What does “${p[0]}” mean?`,p[1],pairs[(pairs.indexOf(p)+1)%pairs.length][1],pairs[(pairs.indexOf(p)+2)%pairs.length][1],p[1]]},
-()=>{let verbs=[['arise','arose','arisen'],['undertake','undertook','undertaken'],['foresee','foresaw','foreseen'],['overcome','overcame','overcome']];let v=verbs[Math.floor(Math.random()*verbs.length)];return [`Choose the past participle of “${v[0]}”.`,v[2],v[1],v[0]+'ed',v[2]]}
-]};
-function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
-function save(){try{localStorage.setItem('englishArenaSultanov',JSON.stringify(state))}catch(e){};updateUI()}
-function unlocked(l){return l==='easy'||(l==='standard'&&state.easy>=150)||(l==='hard'&&state.standard>=450)}
+hard: [
+["Had I known, I ___ you.","would tell","would have told","will tell","told",1],
+["Hardly ___ when the phone rang.","I had sat down","had I sat down","I sat down","did I sat down",1],
+["She talks as if she ___ everything.","knows","has known","knew","will know",2],
+["No sooner ___ than it began to rain.","we left","had we left","we had leave","did we left",1],
+["It is essential that he ___ on time.","is","was","be","will be",2],
+["Were I you, I ___ the offer.","accept","will accept","would accept","accepted",2],
+["The proposal, ___ carefully, was approved.","review","reviewed","reviewing","to review",1],
+["Not only ___ late, but he also forgot the report.","he arrived","did he arrive","he did arrive","arrived he",1],
+["I would sooner you ___ me the truth.","tell","told","will tell","have told",1],
+["The more you practise, ___ you become.","better","the best","the better","best",2],
+["Scarcely ___ the meeting when the alarm went off.","had we begun","we had begun","we begin","did we began",0],
+["She denied ___ the confidential file.","to open","open","opening","opened",2],
+["If he had studied harder, he ___ the exam.","would pass","would have passed","will pass","passed",1],
+["The issue is too complex ___ in one sentence.","explaining","explained","to explain","explain",2],
+["Little ___ that his decision would change everything.","he knew","did he know","he did know","knew he",1],
+["I regret ___ you that your application was rejected.","inform","to inform","informing","informed",1],
+["The manager insisted that the report ___ rewritten.","is","was","be","will be",2],
+["Were it not for your help, I ___ failed.","will have","would have","had","would",1],
+["He is believed ___ abroad at the moment.","to work","working","to be working","worked",2],
+["Much as I ___ him, I disagree with his decision.","admire","am admiring","admired","will admire",0],
+["The evidence is insufficient to ___ a conclusion.","draw","do","make up","take",0],
+["She would have called if she ___ your number.","knows","knew","had known","would know",2],
+["Only after the lecture ___ the concept.","I understood","did I understand","I did understood","understood I",1],
+["He speaks as though he ___ the owner.","is","was","were","has been",2],
+["There is no point ___ over the same problem.","argue","to argue","in arguing","argued",2]
+]
+};
+
+const defaults = {
+ coins:0,correct:0,earned:{easy:0,standard:0,hard:0},unlockedEnd:false
+};
+let state = loadState();
+let level = "easy", order = [], position = 0, questionCorrect = 0;
+let seconds = 10, timer = null, deadline = 0, answered = false;
+
+function loadState(){
+  try{
+    const saved = JSON.parse(localStorage.getItem("englishArenaSave"));
+    if(saved && typeof saved.coins==="number"){
+      return {...defaults,...saved,earned:{...defaults.earned,...(saved.earned||{})}};
+    }
+  }catch(e){}
+  return {...defaults,earned:{...defaults.earned}};
+}
+function saveState(){
+  try{localStorage.setItem("englishArenaSave",JSON.stringify(state));}
+  catch(e){document.getElementById("saveStatus").textContent="Saqlash imkoni yo‘q — brauzer sozlamalarini tekshir.";}
+  updateUI();
+}
+function fmt(n){return Number(n.toFixed(1)).toString();}
 function updateUI(){
-let total=state.easy+state.standard+state.hard;
-$('topCoins').textContent=total;$('statCoins').textContent=total;$('quizCoins').textContent=total;$('statCorrect').textContent=state.correct;
-$('statLevel').textContent=state.hard>=450?'HARD':state.standard>=150?'STANDARD':'EASY';
-$('standardCard').classList.toggle('locked',!unlocked('standard'));$('standardStatus').textContent=unlocked('standard')?'Unlocked ✓':`🔒 ${Math.max(0,150-state.easy)} coins to go`;$('standardPlay').textContent=unlocked('standard')?'Play →':'🔒';
-$('hardCard').classList.toggle('locked',!unlocked('hard'));$('hardStatus').textContent=unlocked('hard')?'Unlocked ✓':`🔒 ${Math.max(0,450-state.standard)} coins to go`;$('hardPlay').textContent=unlocked('hard')?'Play →':'🔒';
+  document.getElementById("coins").textContent=fmt(state.coins);
+  document.getElementById("correctTotal").textContent=state.correct;
+  document.getElementById("quizCoins").textContent=fmt(state.coins);
+  document.getElementById("quizCorrect").textContent=questionCorrect;
+  document.getElementById("overallBar").style.width=Math.min(100,state.correct*2)+"%";
+  document.getElementById("standardBtn").disabled=state.earned.easy<150;
+  document.getElementById("hardBtn").disabled=state.earned.standard<450;
+  document.getElementById("standardInfo").textContent=state.earned.easy>=150?"🔓 OCHILGAN":fmt(state.earned.easy)+"/150 coin";
+  document.getElementById("hardInfo").textContent=state.earned.standard>=450?"🔓 OCHILGAN":fmt(state.earned.standard)+"/450 coin";
 }
-function makeQuestion(){
-let bank=banks[level], pool=templates[level], useTemplate=Math.random()<.46;
-let q;
-if(useTemplate){q=pool[Math.floor(Math.random()*pool.length)]();}else{
-let available=bank.filter(x=>!previousQuestions.includes(x[0]));
-if(!available.length){previousQuestions=[];available=bank.slice()}
-q=available[Math.floor(Math.random()*available.length)];previousQuestions.push(q[0]);
+function startLevel(which){
+  if(which==="standard"&&state.earned.easy<150)return;
+  if(which==="hard"&&state.earned.standard<450)return;
+  clearInterval(timer);
+  level=which;order=Array.from({length:QUESTIONS[level].length},(_,i)=>i);
+  shuffle(order);position=0;questionCorrect=0;
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("endScreen").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+  document.getElementById("levelTitle").textContent={easy:"🟢 EASY",standard:"🔵 STANDARD",hard:"🟣 HARD"}[level];
+  nextQuestion();
 }
-let opts=shuffle([q[1],q[2],q[3]]);
-return {text:q[0],options:opts,correct:q[4]};
-}
-function openQuiz(l){
-if(!unlocked(l)){toast(l==='standard'?'STANDARD opens when you earn 150 coins in EASY.':'HARD opens when you earn 450 coins in STANDARD.');return}
-level=l;questionNo=0;sessionScore=0;previousQuestions=[];$('quizTitle').textContent=l.toUpperCase()+' • English Test';$('quizModal').classList.add('show');nextQuestion()
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
 }
 function nextQuestion(){
-lockedAnswer=false;let q=makeQuestion();currentCorrect=q.correct;
-$('qCount').textContent=`Question ${questionNo+1} • ${level.toUpperCase()}`;$('question').textContent=q.text;$('progressIn').style.width=((questionNo%10+1)*10)+'%';$('feedback').textContent='';$('nextBtn').disabled=true;$('nextBtn').textContent='Next question →';$('answers').innerHTML='';
-q.options.forEach(opt=>{let b=document.createElement('button');b.className='answer';b.textContent=opt;b.onclick=()=>chooseAnswer(b,opt);$('answers').appendChild(b)});
+  clearInterval(timer);
+  if(position>=order.length){
+    order=Array.from({length:QUESTIONS[level].length},(_,i)=>i);
+    shuffle(order);position=0;
+  }
+  answered=false;
+  const q=QUESTIONS[level][order[position]];
+  document.getElementById("questionCount").textContent="Savol "+(position+1)+" / "+order.length;
+  document.getElementById("question").textContent=q[0];
+  document.getElementById("feedback").textContent="";
+  const box=document.getElementById("answers");box.innerHTML="";
+  for(let i=1;i<=4;i++){
+    const b=document.createElement("button");
+    b.className="answer";b.textContent=["A","B","C","D"][i-1]+". "+q[i];
+    b.onclick=()=>chooseAnswer(i-1,b);
+    box.appendChild(b);
+  }
+  seconds={easy:10,standard:15,hard:20}[level];
+  deadline=Date.now()+seconds*1000;
+  renderTimer();
+  timer=setInterval(()=>{
+    renderTimer();
+    if(Date.now()>=deadline){clearInterval(timer);timeOut();}
+  },100);
+  updateUI();
 }
-function chooseAnswer(btn,opt){
-if(lockedAnswer)return;lockedAnswer=true;questionNo++;state.answered++;
-document.querySelectorAll('.answer').forEach(b=>{b.disabled=true;if(b.textContent===currentCorrect)b.classList.add('correct')});
-if(opt===currentCorrect){state[level]+=2;state.correct++;sessionScore+=2;$('feedback').textContent='✅ Correct! +2 coins — excellent work!';$('feedback').style.color='#31edbe'}else{btn.classList.add('wrong');$('feedback').textContent='Not quite! The correct answer is: '+currentCorrect;$('feedback').style.color='#ff8aa8'}
-save();$('nextBtn').disabled=false;$('nextBtn').textContent='Next question →';$('quizCoins').textContent=state.easy+state.standard+state.hard;
+function renderTimer(){
+  const left=Math.max(0,(deadline-Date.now())/1000);
+  document.getElementById("time").textContent=Math.ceil(left);
+  document.getElementById("timerBar").style.width=(left/seconds*100)+"%";
+  document.getElementById("timerBar").style.background=left<=3?"#ff718e":"linear-gradient(90deg,#58e6bd,#6c9cff)";
 }
-function toast(msg){let t=$('toast');t.textContent=msg;t.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display='none',2800)}
-document.querySelectorAll('.play-level').forEach(b=>b.addEventListener('click',()=>openQuiz(b.dataset.level)));
-$('startBtn').onclick=()=>openQuiz(unlocked('standard')?'standard':'easy');
-$('closeQuiz').onclick=()=>{$('quizModal').classList.remove('show');updateUI()};
-$('nextBtn').onclick=()=>{if(!lockedAnswer)return;nextQuestion()};
-$('howBtn').onclick=()=>toast('Answer questions to earn 2 coins. 150 EASY coins unlock STANDARD; 450 STANDARD coins unlock HARD. Your progress saves on this device.');
-$('quizModal').addEventListener('click',e=>{if(e.target===$('quizModal'))$('quizModal').classList.remove('show')});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')$('quizModal').classList.remove('show')});
-updateUI();
-</script>
-</body>
-</html>
+function disableAnswers(){
+  document.querySelectorAll(".answer").forEach(b=>b.disabled=true);
+}
+function changeCoins(amount){
+  state.coins=Math.max(0,Math.round((state.coins+amount)*10)/10);
+  if(amount>0)state.earned[level]=Math.round((state.earned[level]+amount)*10)/10;
+  saveState();
+}
+function chooseAnswer(index,button){
+  if(answered)return;
+  answered=true;clearInterval(timer);disableAnswers();
+  const q=QUESTIONS[level][order[position]];
+  const feedback=document.getElementById("feedback");
+  if(index===q[5]){
+    button.classList.add("correct");
+    feedback.textContent="✅ To‘g‘ri! +2 coin";
+    feedback.style.color="#55e9b2";
+    changeCoins(2);state.correct++;questionCorrect++;
+    saveState();
+  }else{
+    button.classList.add("wrong");
+    document.querySelectorAll(".answer")[q[5]].classList.add("correct");
+    feedback.textContent="❌ Noto‘g‘ri! −1.5 coin";
+    feedback.style.color="#ff91aa";
+    changeCoins(-1.5);
+  }
+  document.getElementById("quizCorrect").textContent=questionCorrect;
+  position++;
+  setTimeout(()=>{if(!document.getElementById("quiz").classList.contains("hidden"))nextQuestion();},900);
+}
+function timeOut(){
+  if(answered)return;
+  answered=true;disableAnswers();
+  const q=QUESTIONS[level][order[position]];
+  document.querySelectorAll(".answer")[q[5]].classList.add("correct");
+  const feedback=document.getElementById("feedback");
+  feedback.textContent="⏰ Vaqt tugadi! −1.5 coin";
+  feedback.style.color="#ff91aa";
+  changeCoins(-1.5);position++;
+  
