@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#030918">
+<title>ENGLISH ARENA ⚡</title>
+<style>
+:root{--bg:#030918;--panel:#07142a;--line:#174a88;--blue:#22c8ff;--purple:#8255ff;--text:#f5f8ff;--muted:#a8bddb;--green:#17edbd;--gold:#ffc44d;--pink:#ff347b}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#0b1d49 0,#030918 48%,#020611 100%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+button{font:inherit;cursor:pointer}button:disabled{cursor:not-allowed;opacity:.6}
+.topbar{min-height:64px;padding:12px clamp(14px,4vw,48px);display:flex;align-items:center;gap:18px;justify-content:space-between;border-bottom:1px solid #15325a;background:#030918ee;position:sticky;top:0;z-index:5;backdrop-filter:blur(14px)}
+.brand{font-size:clamp(17px,3vw,23px);font-weight:950;white-space:nowrap;color:#70e3ff;text-decoration:none}.brand b{color:white}.nav{display:flex;gap:18px}.nav a{color:#c2d6f4;text-decoration:none;font-size:14px}.nav a:hover{color:var(--blue)}
+.coin-pill{border:1px solid #24528d;border-radius:30px;padding:7px 12px;font-weight:850;background:#06152d;white-space:nowrap}
+main{max-width:1150px;margin:auto;padding:24px clamp(13px,3vw,35px)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;padding:25px 0 30px}
+.eyebrow{color:#7fbcff;margin-bottom:12px;font-size:14px}h1{font-size:clamp(43px,7vw,75px);line-height:.95;letter-spacing:-2px}h1 span{display:block;background:linear-gradient(110deg,#fff,#71dfff,#8c6bff);background-clip:text;color:transparent}
+.owner{margin:14px 0;color:#b7d5fa;font-weight:750}.intro{color:#c5d5eb;line-height:1.65;max-width:490px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.btn{border:1px solid #2679ff;border-radius:30px;padding:11px 17px;color:white;background:#071a38;font-weight:800}
+.btn.primary{border:0;background:linear-gradient(110deg,#21c8f4,#385cff 75%,#7e4dff);box-shadow:0 8px 26px #245eff44}
+.art{min-height:230px;display:grid;place-items:center;position:relative}.books{font-size:clamp(100px,15vw,160px);filter:drop-shadow(0 0 25px #286fff66);animation:float 4s ease-in-out infinite}.cap{position:absolute;top:10%;right:12%;font-size:55px}.letter{position:absolute;font-size:27px;font-weight:1000;padding:7px 12px;border-radius:12px;background:linear-gradient(145deg,#164db4,#6b35ff);border:1px solid #8cbbff}.letter.a{left:8%;top:18%;transform:rotate(-12deg)}.letter.b{right:1%;top:48%;background:#007e94}.letter.c{bottom:3%;right:13%;background:#9c27d0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border:1px solid var(--line);border-radius:18px;padding:15px;background:#07142add}
+.stat{text-align:center;padding:7px;border-right:1px solid #18365b}.stat:last-child{border:0}.stat strong{display:block;font-size:23px}.stat small{color:var(--muted)}
+.section{border:1px solid var(--line);border-radius:18px;padding:22px;background:linear-gradient(145deg,#071329ed,#061025dd);margin-top:16px}
+.section h2{text-align:center;font-size:clamp(22px,4vw,30px)}.sub{text-align:center;color:var(--muted);font-size:14px;margin:7px 0 20px}
+.levels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.level-card{border:1px solid #24548b;border-radius:17px;padding:17px;background:linear-gradient(145deg,#0a2134,#061224);min-width:0}.level-card.easy{border:2px solid var(--green)}.level-card.standard{border-color:var(--gold)}.level-card.hard{border-color:var(--pink)}.level-card.end{border-color:#a678ff;background:linear-gradient(145deg,#241344,#081326)}.level-card.locked{filter:saturate(.65)}
+.symbol{font-size:30px;margin-bottom:7px}.level-card h3{font-size:20px;margin-bottom:6px}.level-card p{font-size:12px;line-height:1.5;color:#bfd1e8;min-height:55px}.level-foot{display:flex;flex-direction:column;align-items:stretch;gap:10px;margin-top:13px}.status{text-align:center;border-radius:20px;padding:7px;font-size:12px;font-weight:850;background:#12314a;color:#d7eaff}.easy .status{background:#0c453f;color:#75ffe0}.standard .status{background:#4b3916;color:#ffce63}.hard .status{background:#45152d;color:#ff80ac}.end .status{background:#351b60;color:#d9bdff}.level-foot .btn{padding:9px 12px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}.feature{text-align:center;border:1px solid #174a88;border-radius:15px;background:#061125c9;padding:17px 10px}.feature .ico{font-size:27px}.feature h4{margin:6px 0}.feature p{font-size:12px;color:var(--muted);line-height:1.5}
+footer{text-align:center;padding:25px 12px;color:#9dbde3;border-top:1px solid #17365e;margin-top:15px;font-size:13px}
+.modal{position:fixed;inset:0;z-index:20;background:#010613e8;backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:12px}.modal.show{display:flex}.quiz-box{width:min(620px,100%);max-height:92vh;overflow:auto;border:1px solid #2863a8;border-radius:20px;background:linear-gradient(145deg,#0b1c37,#030b19);padding:clamp(16px,4vw,24px);box-shadow:0 0 60px #1766ff2b}.quiz-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:17px}.quiz-top h2{font-size:20px}.xbtn{border:1px solid #31557d;background:#0b1a31;color:white;border-radius:50%;width:36px;height:36px}
+.progress{height:7px;border-radius:10px;background:#1b2c48;overflow:hidden;margin-bottom:20px}.progress-in{height:100%;width:0;background:linear-gradient(90deg,#1dd9f6,#8b54ff);transition:width .25s}.timer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px;color:#a8dfff;font-size:14px}.timer strong{font-size:18px;color:#fff}.q-count{color:#81cfff;font-size:12px;margin-bottom:9px}.question{font-size:21px;line-height:1.4;font-weight:800;margin-bottom:18px}.answers{display:grid;gap:10px}.answer{padding:13px 15px;text-align:left;border-radius:12px;border:1px solid #26466e;background:#0a1930;color:#eef6ff}.answer:hover:not(:disabled){border-color:#39cfff;background:#0b2543}.answer.correct{border-color:#17edbd;background:#064333}.answer.wrong{border-color:#ff527f;background:#46172b}.feedback{min-height:25px;margin:13px 0;color:#b9d0ec;font-size:14px}.quiz-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#092541;border:1px solid #2e9ad7;color:white;padding:12px 18px;border-radius:12px;z-index:50;display:none;max-width:92%;text-align:center;box-shadow:0 8px 30px #0008}
+.celebrate{position:fixed;inset:0;z-index:40;background:#030918ed;display:none;align-items:center;justify-content:center;padding:18px;text-align:center}.celebrate.show{display:flex}.celebrate-box{width:min(480px,100%);border:1px solid #bd91ff;border-radius:24px;padding:30px 20px;background:linear-gradient(145deg,#25124c,#07152d);box-shadow:0 0 60px #9b59ff55;position:relative;z-index:2}.celebrate-box .party{font-size:55px}.celebrate-box h2{font-size:clamp(24px,6vw,34px);margin:12px 0;color:#e3caff}.celebrate-box p{line-height:1.6;color:#e1eaff;margin-bottom:20px}.confetti{position:fixed;top:-15px;width:9px;height:14px;z-index:1;animation:fall 3.6s linear forwards}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-10px) rotate(-4deg)}}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.85}}
+@media(max-width:850px){.levels{grid-template-columns:repeat(2,minmax(0,1fr))}.features{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.topbar{flex-wrap:wrap;gap:10px}.nav{order:3;width:100%;justify-content:space-around}.nav a{font-size:12px}.hero{grid-template-columns:1fr;padding-top:15px;gap:0;text-align:center}.intro{margin:auto}.actions{justify-content:center}.art{min-height:190px;grid-row:2}.books{font-size:120px}.cap{font-size:45px}.stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;padding:8px}.stat{padding:5px 2px}.stat strong{font-size:18px}.stat small{font-size:10px}.section{padding:17px 12px}.levels{grid-template-columns:1fr;gap:10px}.level-card{display:grid;grid-template-columns:48px 1fr;column-gap:10px;padding:14px}.symbol{grid-row:span 2;font-size:26px}.level-card h3{font-size:19px}.level-card p{min-height:0}.level-foot{grid-column:2;flex-direction:row;align-items:center;flex-wrap:wrap}.level-foot .btn{flex:1}.features{gap:8px}.feature{padding:13px 7px}.question{font-size:19px}.quiz-actions{align-items:stretch}.quiz-actions .btn{flex:1}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home">📘 <b>ENGLISH ARENA</b> ⚡</a>
+  <nav class="nav"><a href="#home">Home</a><a href="#levels">Levels</a><a href="#features">Features</a><a href="#profile">Profile</a></nav>
+  <div class="coin-pill">🪙 <span id="topCoins">0</span></div>
+</header>
+<main id="home">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Learn English • Grow Your Future</div>
+      <h1>ENGLISH <span>ARENA</span></h1>
+      <div class="owner">Owner Sultanov</div>
+      <p class="intro">Test your knowledge, earn coins, unlock new levels and become a true English champion!</p>
+      <div class="actions"><button class="btn primary" id="startBtn">▶ Start Learning</button><button class="btn" id="howBtn">ⓘ How It Works</button></div>
+    </div>
+    <div class="art"><div class="letter a">A</div><div class="books">📚</div><div class="cap">🎓</div><div class="letter b">B</div><div class="letter c">C</div></div>
+  </section>
+  <section class="stats" id="profile">
+    <div class="stat"><strong id="statCoins">0</strong><small>🪙 Your Coins</small></div>
+    <div class="stat"><strong id="statLevel">EASY</strong><small>👑 Current Level</small></div>
+    <div class="stat"><strong id="statCorrect">0</strong><small>🏆 Total Correct</small></div>
+  </section>
+  <section class="section" id="levels">
+    <h2>Choose Your Level</h2><p class="sub">Answer questions, earn coins and unlock every challenge!</p>
+    <div class="levels">
+      <article class="level-card easy"><div class="symbol">🌱</div><div><h3>EASY</h3><p>Beginner level • +2 coins for correct answers • 10 seconds each</p></div><div class="level-foot"><span class="status" id="easyStatus">Available</span><button class="btn primary play-level" data-level="easy">Play →</button></div></article>
+      <article class="level-card standard locked" id="standardCard"><div class="symbol">⚡</div><div><h3>STANDARD</h3><p>Intermediate • Unlock with 150 EASY coins • 15 seconds each</p></div><div class="level-foot"><span class="status" id="standardStatus">🔒 150 EASY coins</span><button class="btn play-level" data-level="standard" id="standardPlay">🔒 Locked</button></div></article>
+      <article class="level-card hard locked" id="hardCard"><div class="symbol">🔥</div><div><h3>HARD</h3><p>Advanced • Unlock with 450 STANDARD coins • 20 seconds each</p></div><div class="level-foot"><span class="status" id="hardStatus">🔒 450 STANDARD coins</span><button class="btn play-level" data-level="hard" id="hardPlay">🔒 Locked</button></div></article>
+      <article class="level-card end locked" id="endCard"><div class="symbol">👑</div><div><h3>END</h3><p>Final champion level • Unlock for 600 coins • No timer</p></div><div class="level-foot"><span class="status" id="endStatus">🔒 600 coins</span><button class="btn play-level" data-level="end" id="endPlay">🔒 600 coins</button></div></article>
+    </div>
+  </section>
+  <section class="features" id="features">
+    <div class="feature"><div class="ico">🎯</div><h4>Multiple Choice</h4><p>Choose the right answer and improve your skills.</p></div>
+    <div class="feature"><div class="ico">🪙</div><h4>Earn Coins</h4><p>Correct answer +2 coins; wrong or timeout −1.5 coins.</p></div>
+    <div class="feature"><div class="ico">🔓</div><h4>Unlock Levels</h4><p>Reach new levels and face bigger challenges.</p></div>
+    <div class="feature"><div class="ico">💾</div><h4>Saved Progress</h4><p>Your coins and progress are saved on this device.</p></div>
+  </section>
+</main>
+<footer>📘 ENGLISH ARENA ⚡ • Learn English • Build Your Future</footer>
+
+<div class="modal" id="quizModal" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+ <div class="quiz-box">
+  <div class="quiz-top"><h2 id="quizTitle">EASY • English Test</h2><button class="xbtn" id="closeQuiz" aria-label="Close">✕</button></div>
+  <div class="progress"><div class="progress-in" id="progressIn"></div></div>
+  <div class="timer" id="timerRow"><span>⏱️ Time left</span><strong id="timerText">10 s</strong></div>
+  <div class="q-count" id="qCount">Question 1</div><div class="question" id="question">Loading question...</div>
+  <div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div>
+  <div class="quiz-actions"><span class="coin-pill">🪙 <span id="quizCoins">0</span></span><button class="btn primary" id="nextBtn" disabled>Next question →</button></div>
+ </div>
+</div>
+<div class="modal" id="howModal" role="dialog" aria-modal="true"><div class="quiz-box"><div class="quiz-top"><h2>How it works</h2><button class="xbtn" id="closeHow">✕</button></div><p style="line-height:1.8;color:#d2e3fb">✅ Correct answer: +2 coins.<br>❌ Wrong answer or time runs out: −1.5 coins.<br>🌱 EASY: 10 seconds per question.<br>⚡ STANDARD: 15 seconds per question, unlock with 150 EASY coins.<br>🔥 HARD: 20 seconds per question, unlock with 450 STANDARD coins.<br>👑 END: unlock for 600 coins. END has no timer. When you unlock END, a congratulations menu appears!<br><br>Your coins and progress are saved in this browser on this device.</p></div></div>
+<div class="celebrate" id="celebrate" role="dialog" aria-modal="true"><div class="celebrate-box"><div class="party">🎉 🥳 🎊</div><h2>TABRIKLAYMIZ!</h2><p>SIZ BIZNING O‘YINIMIZNI YUTDINGIZ!<br>END DARAJASINI OCHDINGIZ!<br>Haqiqiy English Arena chempionisiz! 👑</p><button class="btn primary" id="celebrateClose">Davom etish →</button></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const $=id=>document.getElementById(id);
+const defaultState={coins:0,easyCoins:0,standardCoins:0,correct:0,answered:0,endUnlocked:false,standardUnlocked:false,hardUnlocked:false};
+let state;
+try{state={...defaultState,...JSON.parse(localStorage.getItem('englishArenaSultanov')||'{}')}}catch(e){state={...defaultState}}
+let level='easy',questionNo=0,lockedAnswer=false,currentCorrect='',sessionScore=0,previousQuestions=[],timerId=null,timeLeft=0,questionToken=0,toastId=null;
+const banks={
+easy:[
+['She ___ a student.','is','are','am','is'],['I ___ football every Sunday.','play','plays','playing','play'],['They ___ happy today.','are','is','am','are'],['He ___ to school by bus.','goes','go','going','goes'],['We ___ English at school.','study','studies','studying','study'],['There ___ a cat in the room.','is','are','am','is'],['I have ___ apple.','an','a','the','an'],['The opposite of “big” is ___.','small','tall','long','small'],['Yesterday, I ___ at home.','was','am','are','was'],['She can ___ very well.','swim','swims','swimming','swim'],['My brother ___ TV now.','is watching','watch','watches','is watching'],['What ___ your name?','is','are','am','is'],['We ___ from Uzbekistan.','are','is','be','are'],['A person who teaches is a ___.','teacher','doctor','driver','teacher'],['I ___ breakfast every morning.','eat','eats','eating','eat'],['The plural of “child” is ___.','children','childs','childes','children'],['This is ___ book.','my','me','I','my'],['Water ___ at 100°C.','boils','boil','boiling','boils'],['How ___ brothers do you have?','many','much','any','many'],['She ___ like coffee.','doesn’t','don’t','isn’t','doesn’t'],['We are ___ a lesson now.','having','have','has','having'],['The past of “go” is ___.','went','goed','gone','went'],['There are seven days in a ___.','week','month','year','week'],['I am taller ___ my sister.','than','then','that','than'],['Please ___ the door.','open','opens','opening','open'],['He has two ___.','feet','foots','footes','feet'],['It is cold. Put ___ your coat.','on','in','at','on'],['I ___ my homework yesterday.','did','do','does','did'],['What time ___ you get up?','do','does','are','do'],['The sun ___ in the east.','rises','rise','rising','rises']
+],
+standard:[
+['If I ___ more time, I would learn French.','had','have','will have','had'],['She has lived here ___ 2020.','since','for','during','since'],['By the time we arrived, the film ___.','had started','starts','has start','had started'],['He asked me where I ___.','lived','live','am live','lived'],['I am interested ___ learning languages.','in','on','at','in'],['Neither Tom nor his friends ___ ready.','are','is','was','are'],['This is the ___ book I have ever read.','most interesting','more interesting','interestingest','most interesting'],['If it rains, we ___ at home.','will stay','would stayed','stayed','will stay'],['She speaks English ___ than I do.','more fluently','most fluent','fluentlier','more fluently'],['The letter ___ yesterday.','was sent','sent','is send','was sent'],['I wish I ___ taller.','were','am','will be','were'],['You ___ wear a seat belt in a car.','must','might to','can to','must'],['Despite ___ tired, he finished the work.','being','be','was','being'],['I have never ___ to London.','been','went','being','been'],['The room needs ___.','cleaning','clean','to cleaning','cleaning'],['She suggested ___ a taxi.','taking','to take','take','taking'],['He is used to ___ up early.','getting','get','got','getting'],['Unless you hurry, you ___ the bus.','will miss','missed','would missed','will miss'],['I would rather ___ at home tonight.','stay','to stay','staying','stay'],['The man ___ car was stolen called the police.','whose','who','which','whose'],['Hardly had I arrived when it ___.','started raining','starts raining','has rain','started raining'],['She denied ___ the window.','breaking','to break','break','breaking'],['The more you practise, the ___ you become.','better','best','good','better'],['I look forward to ___ from you.','hearing','hear','heard','hearing'],['The meeting was put ___ until Friday.','off','out','up','off'],['If I had known, I ___ you.','would have helped','will help','helped','would have helped'],['He speaks as if he ___ everything.','knew','knows','know','knew'],['No sooner had she left ___ the phone rang.','than','when','then','than'],['The results ___ announced tomorrow.','will be','will','are being','will be'],['He is responsible ___ organizing the event.','for','to','with','for']
+],
+hard:[
+['Choose the correct sentence.','Had I known, I would have called.','If I would know, I called.','Had I knew, I will call.','Had I known, I would have called.'],['Not only ___ late, but he also forgot the documents.','was he','he was','did he was','was he'],['The proposal, ___ by the committee, was accepted.','having been reviewed','reviewing','has reviewed','having been reviewed'],['Were it not for your help, I ___ lost.','would be','will be','am','would be'],['She talks as though she ___ the owner.','were','is being','has been','were'],['Little ___ that the decision would change everything.','did they know','they knew','they did knew','did they know'],['The data ___ collected over several years.','were','was being','has','were'],['He objected to ___ treated unfairly.','being','be','have','being'],['Scarcely had we sat down ___ the lights went out.','when','than','then','when'],['The issue is worth ___.','considering','to consider','consider','considering'],['I would sooner you ___ anyone about this.','didn’t tell','don’t tell','not tell','didn’t tell'],['The company is believed ___ a new branch.','to be opening','opening','to opening','to be opening'],['She is one of those people who ___ always honest.','are','is','was','are'],['Had the alarm gone off, we ___ earlier.','would have left','will leave','left','would have left'],['The manager insisted that he ___ present.','be','is','was','be'],['His explanation was so vague that it did little to ___ our concerns.','allay','allure','elude','allay'],['The plan was rejected, ___ surprised nobody.','which','that','what','which'],['Only after the meeting ___ the truth.','did we learn','we learned','we did learned','did we learn'],['I regret ___ you that your application was unsuccessful.','to inform','informing','inform','to inform'],['The evidence is not sufficient to ___ the claim.','substantiate','substitute','subside','substantiate'],['Were she to ask, I ___ her.','would help','will help','helped','would help'],['The book is said ___ into several languages.','to have been translated','being translated','to translate','to have been translated'],['He has a tendency to take things ___ granted.','for','as','by','for'],['The committee reached a decision after a ___ discussion.','lengthy','length','longly','lengthy'],['No matter how hard he tried, he couldn’t ___ the problem.','solve','resolve to','solution','solve'],['The witness gave a ___ account of the incident.','coherent','coherence','coherently','coherent'],['I’d rather you ___ me before coming.','had told','tell','have told','had told'],['The new policy will come ___ effect next month.','into','to','in','into'],['She is adept ___ solving complex problems.','at','in','for','at'],['His argument rests ___ a false assumption.','on','in','at','on']
+],
+end:[
+['Choose the correct form: “If she ___ earlier, she would not have missed the train.”','had left','left','would leave','had left'],['Which word means “very careful and precise”?','meticulous','careless','vague','meticulous'],['Choose the correct sentence.','Despite being exhausted, he continued working.','Despite he was exhausted, he continued working.','Despite of exhaustion, he continued working.','Despite being exhausted, he continued working.'],['“To alleviate” means to ___.','make less severe','make worse','ignore completely','make less severe'],['Choose the correct word: Her explanation was clear and ___.','persuasive','persuade','persuasion','persuasive'],['Complete: No sooner ___ the door than the phone rang.','had I closed','I had closed','did I closed','had I closed'],['Which is closest in meaning to “ambiguous”?','having more than one possible meaning','very obvious','completely false','having more than one possible meaning'],['Choose the correct form: I recommend that he ___ immediately.','leave','leaves','left','leave'],['“Ubiquitous” means ___.','found everywhere','very rare','hard to understand','found everywhere'],['Complete: The results, ___ carefully, were published.','having been checked','checking','have checked','having been checked'],['Choose the correct phrase.','a wealth of information','an information wealths','many information','a wealth of information'],['“Pragmatic” describes someone who is ___.','practical','dreamy and unrealistic','uncertain','practical'],['Complete: Had it not been for the map, we ___ lost.','would have got','will get','would get','would have got'],['Choose the correct word: His claim lacked ___.','credibility','credible','credibly','credibility'],['Which phrase means “to reveal a secret”?','let the cat out of the bag','hit the nail on the head','once in a blue moon','let the cat out of the bag'],['Complete: The more thoroughly you prepare, ___ you will perform.','the better','better','the best','the better'],['“Conundrum” means a ___.','difficult problem','simple answer','short speech','difficult problem'],['Choose the correct sentence.','She insisted that he be informed.','She insisted that he is informed yesterday.','She insisted him to inform.','She insisted that he be informed'],['“Eloquent” means ___.','fluent and persuasive in speaking','silent','confusing','fluent and persuasive in speaking'],['Complete: Not until the results arrived ___ the mistake.','did we notice','we noticed','noticed we','did we notice']
+]
+};
+const labels={easy:'EASY',standard:'STANDARD',hard:'HARD',end:'END'};
+const timers={easy:10,standard:15,hard:20};
+function save(){try{localStorage.setItem('englishArenaSultanov',JSON.stringify(state))}catch(e){}}
+function fmt(n){return Number(n).toFixed(1).replace(/\.0$/,'')}
+function toast(msg){const t=$('toast');t.textContent=msg;t.style.display='block';clearTimeout(toastId);toastId=setTimeout(()=>t.style.display='none',2600)}
+function unlocked(l){if(l==='easy')return true;if(l==='standard')return !!state.standardUnlocked;if(l==='hard')return !!state.hardUnlocked;if(l==='end')return !!state.endUnlocked;return false}
+function render(){
+ $('topCoins').textContent=fmt(state.coins);$('statCoins').textContent=fmt(state.coins);$('quizCoins').textContent=fmt(state.coins);$('statCorrect').textContent=state.correct;
+ $('statLevel').textContent=state.endUnlocked?'END':state.hardUnlocked?'HARD':state.standardUnlocked?'STANDARD':'EASY';
+ $('standardCard').classList.toggle('locked',!state.standardUnlocked);$('standardStatus').textContent=state.standardUnlocked?'✓ Unlocked':'🔒 150 EASY coins';$('standardPlay').textContent=state.standardUnlocked?'Play →':'🔒 Locked';
+ $('hardCard').classList.toggle('locked',!state.hardUnlocked);$('hardStatus').textContent=state.hardUnlocked?'✓ Unlocked':'🔒 450 STANDARD coins';$('hardPlay').textContent=state.hardUnlocked?'Play →':'🔒 Locked';
+ $('endCard').classList.toggle('locked',!state.endUnlocked);$('endStatus').textContent=state.endUnlocked?'👑 Champion unlocked':'🔒 Unlock for 600 coins';$('endPlay').textContent=state.endUnlocked?'✓ Champion unlocked':'Unlock • 600 🪙';
+}
+function stopTimer(){if(timerId){clearInterval(timerId);timerId=null}}
+function showCelebration(){const box=$('celebrate');box.classList.add('show');for(let i=0;i<100;i++){const c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'vw';c.style.background=['#22c8ff','#ffc44d','#ff347b','#17edbd','#b17aff','#ffffff'][i%6];c.style.animationDelay=(Math.random()*1.8)+'s';c.style.transform='rotate('+(Math.random()*360)+'deg)';document.body.appendChild(c);setTimeout(()=>c.remove(),5600)}}
+function unlockEnd(){if(state.endUnlocked)return;state.endUnlocked=true;save();render();showCelebration()}
+function unlockIfEarned(){if(!state.standardUnlocked&&state.easyCoins>=150){state.standardUnlocked=true;toast('STANDARD darajasi ochildi! 🎉')}if(!state.hardUnlocked&&state.standardCoins>=450){state.hardUnlocked=true;toast('HARD darajasi ochildi! 🔥')}}
+function openLevel(l){
+ if(l==='end'&&state.endUnlocked){toast('END ochilgan! Bu yakuniy tabrik darajasi — unda test va taymer yo‘q. 👑');return}
+ if(l==='standard'&&!state.standardUnlocked){toast('STANDARD ochish uchun EASY darajasida 150 tanga yig‘ing.');return}
+ if(l==='hard'&&!state.hardUnlocked){toast('HARD ochish uchun STANDARD darajasida 450 tanga yig‘ing.');return}
+ if(l==='end'&&!state.endUnlocked){
+   if(state.coins<600){toast('END ochish uchun jami 600 tanga kerak. Sizda '+fmt(state.coins)+' tanga bor.');return}
+   state.coins=Math.max(0,state.coins-600);unlockEnd();return;
+ }
+ level=l;questionNo=0;sessionScore=0;previousQuestions=[];$('quizTitle').textContent=labels[level]+' • English Test';$('quizModal').classList.add('show');nextQuestion();
+}
+function nextQuestion(){
+ stopTimer();lockedAnswer=false;questionToken++;const pool=banks[level];let idx;
+ do{idx=Math.floor(Math.random()*pool.length)}while(pool.length>1&&previousQuestions.includes(idx));
+ previousQuestions.push(idx);if(previousQuestions.length>pool.length*.6)previousQuestions.shift();
+ const q=pool[idx];currentCorrect=q[4];questionNo++;$('qCount').textContent='Question '+questionNo+' • '+labels[level];$('question').textContent=q[0];$('feedback').textContent='';$('nextBtn').disabled=true;$('nextBtn').textContent='Next question →';$('progressIn').style.width=((questionNo%10||10)*10)+'%';$('answers').innerHTML='';
+ const opts=[q[1],q[2],q[3]].sort(()=>Math.random()-.5);
+ opts.forEach(opt=>{const b=document.createElement('button');b.className='answer';b.textContent=opt;b.addEventListener('click',()=>answer(b,opt===currentCorrect,false));$('answers').appendChild(b)});
+ if(level==='end'){$('timerRow').style.display='none'}else{$('timerRow').style.display='flex';timeLeft=timers[level];$('timerText').textContent=timeLeft+' s';const token=questionToken;timerId=setInterval(()=>{if(token!==questionToken||lockedAnswer){stopTimer();return}timeLeft--;$('timerText').textContent=timeLeft+' s';if(timeLeft<=0){stopTimer();answer(null,false,true)}},1000)}
+}
+function answer(button,isCorrect,timedOut){
+ if(lockedAnswer)return;lockedAnswer=true;stopTimer();const buttons=[...$('answers').querySelectorAll('button')];buttons.forEach(b=>{b.disabled=true;if(b.textContent===currentCorrect)b.classList.add('correct')});if(button&&!isCorrect)button.classList.add('wrong');
+ state.answered++;
+ if(isCorrect){state.coins+=2;state.correct++;sessionScore+=2;if(level==='easy')state.easyCoins+=2;if(level==='standard')state.standardCoins+=2;$('feedback').textContent='✅ To‘g‘ri! +2 tanga';}
+ else{state.coins=Math.max(0,Math.round((state.coins-1.5)*10)/10);$('feedback').textContent=timedOut?'⏰ Vaqt tugadi! −1,5 tanga':'❌ Noto‘g‘ri! −1,5 tanga';}
+ unlockIfEarned();save();render();$('nextBtn').disabled=false;
+}
+function closeQuiz(){stopTimer();questionToken++;$('quizModal').classList.remove('show')}
+document.querySelectorAll('.play-level').forEach(b=>b.addEventListener('click',()=>openLevel(b.dataset.level)));
+$('startBtn').addEventListener('click',()=>openLevel('easy'));
+$('howBtn').addEventListener('click',()=>$('howModal').classList.add('show'));
+$('closeHow').addEventListener('click',()=>$('howModal').classList.remove('show'));
+$('closeQuiz').addEventListener('click',closeQuiz);
+$('nextBtn').addEventListener('click',()=>{if(!lockedAnswer)return;nextQuestion()});
+$('celebrateClose').addEventListener('click',()=>$('celebrate').classList.remove('show'));
+$('quizModal').addEventListener('click',e=>{if(e.target===$('quizModal'))closeQuiz()});
+$('howModal').addEventListener('click',e=>{if(e.target===$('howModal'))$('howModal').classList.remove('show')});
+render();
+</script>
+</body>
+</html>
